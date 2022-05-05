@@ -2,13 +2,17 @@ let array = [];
 
 do {
     num = Number(prompt("inserisci numero"));
-    array.push(num);
+    if((somma(array) + num) < 50) {
+        array.push(num);
+    }
+    alert(array);
+    
 }
-while(func(array))
+while(somma(array) < 50)
 
 alert("raggiunta somma richiesta");
 
-function func(array) {
+function somma(array) {
 
     let somma = 0;
 
@@ -16,12 +20,5 @@ function func(array) {
         somma = somma + array[i];
     }
 
-    if(somma < 50) {
-
-        return true;
-
-    } else {
-
-        return false;
-    }
+    return somma;
 }
